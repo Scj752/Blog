@@ -5,9 +5,12 @@ title: Cache测信道攻击
 
 <h2>{{page.title}}</h2>
 <p>Cache测信道攻击是指在程序运行时，通过与cache有关的一些状态，来获取想要的信息。主要式越权读取。</p>
-<h2>Flush-Reload</h2>
-<p>通过刷新cache，再重新加载cache，通过对cache的读取时间来判断。</p>
-<h2>熔断Meltdown<h2>
+
+<h3>Flush-Reload</h3>
+<p>首先刷新cache，执行访存代码产生异常，之后再重新加载cache，通过对cache的读取时间来判断。越权访问时会从内存加载数据到cache，产生异常后cache并没有变，再通过访问重新加载cache来查看访问时间从而判断是否命中，进而获得访问的数据信息。</p>
+
+<h3>熔断(Meltdown)攻击<h3>
 <p>主要与cpu乱序执行相关。</p>
-<h2>幽灵Specre<h2>
+
+<h3>幽灵(Spectre)攻击<h3>
 <p>主要与cpu分支预测有关。</p>
